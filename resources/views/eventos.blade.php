@@ -6,8 +6,9 @@
 <body>
     <h1>Lista de Eventos</h1>
     <ul>
-        <li>Leandro</li>
-        <li>Francia</li>
-    </ul>
+    @foreach ($eventos as $evento)
+        <li>{{ $evento }}</li>
+    @endforeach
+</ul>
 </body>
 </html>
