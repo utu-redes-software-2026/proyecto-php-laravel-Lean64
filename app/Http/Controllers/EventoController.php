@@ -8,6 +8,6 @@ class EventoController extends Controller
 {
     public function index()
     {
-        return "Listado de eventos desde el controlador";
+        return view ('eventos');
     }
 }
