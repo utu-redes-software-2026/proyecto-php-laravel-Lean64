@@ -15,7 +15,16 @@
 
     <ul>
     @foreach ($eventos as $evento)
-        <li>{{ $evento }}</li>
+        <li>
+            {{ $evento->nombre }}
+
+            <form action="/eventos/{{ $evento->id }}" method="POST" style="display:inline;">
+                @csrf
+                @method('DELETE')
+
+                <button type="submit">Eliminar</button>
+            </form>
+        </li>
     @endforeach
 </ul>
 </form>

@@ -21,4 +21,11 @@ class EventoController extends Controller
 
         return redirect('/eventos');
     }
+    public function destroy($id)
+{
+    $evento = Evento::findOrFail($id);
+    $evento->delete();
+
+    return redirect('/eventos');
+}
 }
