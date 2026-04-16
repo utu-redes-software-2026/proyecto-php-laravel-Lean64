@@ -3,5 +3,5 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('Bienvenido corbillo');
+    return view('Probando commits');
 });
