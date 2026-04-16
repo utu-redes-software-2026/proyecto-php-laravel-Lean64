@@ -6,14 +6,19 @@ use Illuminate\Http\Request;
 
 class EventoController extends Controller
 {
-  public function index()
-{
-    $eventos = [
-        "Clase de Laravel",
-        "Entrega de proyecto",
-        "Reunión de equipo"
-    ];
+    private $eventos = [];
 
-    return view('eventos', compact('eventos'));
-}
+    public function index()
+    {
+        return view('eventos', ['eventos' => $this->eventos]);
+    }
+
+    public function store(Request $request)
+    {
+        $evento = $request->input('evento');
+
+        $this->eventos[] = $evento;
+
+        return redirect('/eventos');
+    }
 }
